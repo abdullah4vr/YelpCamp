@@ -1,0 +1,24 @@
+<%include partials/header%>
+<div class="row text-center">
+    <div style="width:50%; margin : 30px auto">
+        <img src="<%=camp.image%>">
+        <h3><%=camp.name%></h3>
+        <p><%=camp.description%></p>
+        <br>
+        <a href='/camp_grounds/<%=camp._id%>/comments/new'>
+            <div style='background: white ;' class='col-sm-12'>
+            <button style ="width : 25% ;float : right" class="btn btn-success btn-lg btn-block"> Add a new comment</button></a>
+            </div>
+        <%camp.comments.forEach(function(comment){%>
+        <div style='background: whitesmoke'>
+        <p><strong><%=comment.author%></strong>
+            <br>
+             <%=comment.text%>
+         </p>
+         <br>
+        </div>
+         <%});%>
+    </div>
+</div>
+
+<%include partials/footer%>
